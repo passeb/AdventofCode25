@@ -1,5 +1,5 @@
 def readInput():
-    with open("Input1.txt") as file:
+    with open("2ndTask/test.txt") as file:
         instructions = []
         for line in file:
             instructions.append(line.strip())

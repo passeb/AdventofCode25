@@ -7,7 +7,7 @@ def readInput():
     return instructions
 
 
-def calculateMaxJoltage(instructions):
+def calculateMaxJoltage2Digits(instructions):
     maxJoltages = []
     for list in instructions:
         maxJoltage = 0
@@ -23,9 +23,33 @@ def calculateMaxJoltage(instructions):
     return sum(maxJoltages)
 
 
+def calculateMaxJoltage12Digits(instructions):
+    maxJoltages = []
+    for list in instructions:
+        maxJoltage = 0
+        maxDigits = []
+        remainingList = list[:]
+        for i in range(11, -1, -1):
+            newlist = remainingList[:]
+            print(newlist)
+            for j in range(i):
+                newlist.pop()
+            print(newlist)
+            indexMaxWithoutLastDigits = newlist.index(max(newlist))
+            maxDigits.append(newlist[indexMaxWithoutLastDigits])
+            indexMaxWithoutLastDigits += 1
+            remainingList = remainingList[indexMaxWithoutLastDigits:]
+            print(remainingList)
+        strMaxJoltage = ''.join([str(digit) for digit in maxDigits])
+        maxJoltage = int(strMaxJoltage)
+        maxJoltages.append(maxJoltage)
+        print(maxJoltage)
+    return sum(maxJoltages)
+
+
 def main():
     instructions = readInput()
-    code = calculateMaxJoltage(instructions)
+    code = calculateMaxJoltage12Digits(instructions)
     print("The final code is:")
     print(code)
 

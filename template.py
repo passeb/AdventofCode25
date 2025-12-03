@@ -5,11 +5,12 @@ def readInput():
             instructions.append(line.strip())
     return instructions
 
+
 def main():
     instructions = readInput()
-    
+
     print("The final code is:")
-    print(code)
+    print(instructions)
 
 
 if __name__ == "__main__":

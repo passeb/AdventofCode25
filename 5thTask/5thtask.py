@@ -71,8 +71,6 @@ def countFreshIngredientIds(freshIngredientIds):
 def main():
     instructions = readInput()
     freshIngredientIds = calculateFreshIngredientIds(instructions)
-    #iDs = countFreshIngredientIds(freshIngredientIds)
-    #iDs = countFreshIngredientIds(iDs)
     code = countFreshIngredientIds(freshIngredientIds)
     print("The final code is:")
     print(code)
